@@ -871,17 +871,36 @@ footer ul a:hover {
     transition: all 0.35s ease-in-out;
 }
 
-/* When scrolled */
-.fixed-top.scrolled {
-    background: rgba(0, 0, 0, 0.75); /* Change as needed */
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+/* Navbar default */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    transition: background 0.35s ease, transform 0.35s ease;
+    will-change: transform, background;
+    backface-visibility: hidden;
 }
 
-/* Smooth slide up/down effect */
-.fixed-top.scrolling-down {
-    transform: translateY(-100%);
+/* After scroll */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.75); /* You can customize this */
+    backdrop-filter: blur(10px); /* smooth glass look */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transform: translateZ(0);
 }
 
-.fixed-top.scrolling-up {
-    transform: translateY(0);
+/* Body smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional performance boost */
+img {
+    content-visibility: auto;
 }
