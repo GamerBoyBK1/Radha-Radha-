@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Minecraft | DinoNode</title>
+	<link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+	<!-- SEO -->
+	<meta property="og:site_name" content="">
+	<meta property="og:title" content="">
+	<meta name="twitter:card" content="summary">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="">
+	<meta name="description" content="">
+	<meta property="og:url" content="https://localhost/">
+	<meta property="og:image" content="">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="apple-touch-icon" sizes="180x180" href="minecraft.html">
+	<link rel="icon" type="image/png" sizes="32x32" href="../index.html">
+	<link rel="icon" type="image/png" sizes="16x16" href="minecraft.html">
+	<link rel="manifest" href="minecraft.html">
+	<link rel="mask-icon" href="minecraft.html" color="#000000">
+	<link rel="shortcut icon" href="minecraft.html">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-config" content=""> 
+	<!-- End SEO -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" rel="stylesheet" type="text/css" />
+	<!-- OWL Slider v2.3.4 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+    <!-- Poppins -->
+	<link href="assets/css/fonts.css" rel="stylesheet"> 
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/plans.css">
+	<nav id="navbar_top" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+	    <div class="container-fluid container-custom">
+	        <a class="navbar-brand" href="index.html">
+	            <img class="img-fluid" src="assets/images/logo.svg" alt="CORAMTIX Logo" /> <span>CORAMTIX</span>
+	        </a>
+	        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dinoNavbar" aria-controls="dinoNavbar" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="dinoNavbar">
+	            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+	                <li class="nav-item">
+	                    <a class="nav-link" href="index.html">Home</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="minecraft.html">Minecraft Hosting</a>
+	                </li>
+	                <li class="nav-item dropdown">
+	                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	                        Game Hosting
+	                    </a>
+	                    <ul class="dropdown-menu dropdown-large dropdown-menu-end">
+	                        <div class="row g-3">
+	                            <div class="col-6">
+	                                <ul class="list-unstyled">
+	                                    <li><a class="dropdown-item" href="ark.html"><img src="assets/images/game_icons/game-ark.png" alt="ARK Icon" /> ARK</a></li>
+	                                    <li><a class="dropdown-item" href="csgo.html"><img src="assets/images/game_icons/game-csgo.png" alt="CS:GO Icon" /> CS:GO</a></li>
+	                                </ul>
+	                            </div>
+	                            <div class="col-6">
+	                                <ul class="list-unstyled">
+	                                    <li><a class="dropdown-item" href="fivem.html"><img src="assets/images/game_icons/game-fivem.png" alt="FiveM Icon" /> FiveM</a></li>
+	                                    <li><a class="dropdown-item" href="rust.html"><img src="assets/images/game_icons/game-rust.png" alt="RUST Icon" /> RUST</a></li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </ul>
+	                </li>
+	                <li class="nav-item dropdown">
+	                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	                        Other Hosting
+	                    </a>
+	                    <ul class="dropdown-menu dropdown-menu-end">
+	                        <li><a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a></li>
+	                        <li><a class="dropdown-item" href="bot-hosting.html">Bot Hosting</a></li>
+	                    </ul>
+	                </li>
+	                <li class="nav-item dropdown">
+	                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	                        Important
+	                    </a>
+	                    <ul class="dropdown-menu dropdown-menu-end">
+	                        <li><a class="dropdown-item" href="partners.html">Contact</a></li>
+	                        <li><a class="dropdown-item" href="contact.html">Terms of Service</a></li>
+	                        <li><a class="dropdown-item" href="terms-of-service.html">Terms of Service</a></li>
+	                        <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+	                    </ul>
+	                </li>
+	                <li class="nav-item">
+	                    <div class="dropdown text-center">
+	                        <a class="btn dropdown-toggle" id="panel" data-bs-toggle="dropdown" aria-expanded="false">
+	                            Client Area
+	                        </a>
+	                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-panel" aria-labelledby="panel">
+	                            <a class="dropdown-item" href="client-area.html">
+	                                Client Area <span class="d-block">Billing &amp; Support</span>
+	                            </a>
+	                            <a class="dropdown-item" href="game-panel.html">
+	                                Game Panel <span class="d-block">Game Management</span>
+	                            </a>
+	                        </ul>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+<div class="hero">
+    <div class="container-fluid container-custom h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-6 me-auto hero_content">
+                <h2>Minecraft Server
+Hosting</h2>
+                <p>Unleash your creativity with our powerful, easy-to-manage Minecraft servers. One-click modpack installs, DDoS protection, and ultra-low latency for the ultimate gameplay experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+	<div class="plans py-5">
+		<div class="container-fluid container-custom">
+			<ul id="swicherPlans" class="btn-swicher text-center nav nav-pills d-flex justify-content-center mb-5" data-bs-tabs="tabs">
+                <li class="nav-item">
+                    <a href="#budget" class="nav-link show active" data-bs-toggle="tab">Budget (High Frequency CPU)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#premium" class="nav-link" data-bs-toggle="tab">Premium (Unlimited CPU)</a>
+                </li>
+            </ul>
+
+            <!-- Currency Switcher -->
+            <div class="currency-switcher">
+                <label id="currency-inr-label" style="color: #fff;">INR (₹)</label>
+                <label class="currency-toggle">
+                    <input type="checkbox" id="currency-toggle" onchange="switchCurrency()">
+                    <span class="slider"></span>
+                </label>
+                <label id="currency-usd-label" style="color: #ccc;">USD ($)</label>
+            </div>
+            <!-- End Currency Switcher -->
+
+            <div class="tab-content">
+            	<!-- Budget Plans (Grass to Bedrock) -->
+            	<div id="budget" class="tab-pane active">
+            		<div class="row">
+            			
+                        <!-- Grass Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Grass Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹30" data-usd="$0.36">
+                                    ₹30 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 2 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 100% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 4 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 1 backup</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wood Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Wood Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹99" data-usd="$1.20">
+                                    ₹99 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 3 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 100% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 8 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 1 backup</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stone Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Stone Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹149" data-usd="$1.80">
+                                    ₹149 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 4 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 150% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 16 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 1 backup</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coal Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Coal Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹199" data-usd="$2.40">
+                                    ₹199 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 6 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 150% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 24 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Iron Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Iron Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹299" data-usd="$3.60">
+                                    ₹299 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 8 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 200% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 32 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gold Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Gold Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹399" data-usd="$4.80">
+                                    ₹399 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 10 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 200% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 40 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Diamond Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Diamond Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹499" data-usd="$6.00">
+                                    ₹499 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 12 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 250% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 48 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emerald Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Emerald Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹599" data-usd="$7.20">
+                                    ₹599 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 16 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 250% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 64 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Netherite Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Netherite Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹799" data-usd="$9.60">
+                                    ₹799 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 20 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 350% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 80 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Obsidian Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Obsidian Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹999" data-usd="$12.00">
+                                    ₹999 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 24 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 400% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 96 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bedrock Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Bedrock Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹1,249" data-usd="$15.00">
+                                    ₹1,249 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 32 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> 500% High Frequency CPU</li>
+                                        <li><i class="fad fa-hdd"></i> 150 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            		</div>
+            	</div>
+            	<!-- Premium Plans (Blaze to Zenith) -->
+            	<div id="premium" class="tab-pane">
+            		<div class="row">
+                        
+                        <!-- Blaze Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Blaze Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹499" data-usd="$6.00">
+                                    ₹499 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 4 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 24 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 1 backup</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Storm Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Storm Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹799" data-usd="$9.60">
+                                    ₹799 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 8 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 48 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 2 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phantom Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Phantom Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹1,199" data-usd="$14.40">
+                                    ₹1,199 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 12 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 72 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 3 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Titan Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Titan Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹1,799" data-usd="$21.60">
+                                    ₹1,799 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 16 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 96 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 3 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hydra Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Hydra Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹2,249" data-usd="$27.00">
+                                    ₹2,249 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 20 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 120 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 3 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vortex Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Vortex Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹2,799" data-usd="$33.60">
+                                    ₹2,799 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 24 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 144 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 4 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Zenith Plan -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card mc-card mb-4 text-center">
+                                <div class="card-header py-4">
+                                    <h2 class="mb-0">Zenith Plan</h2>
+                                </div>
+                                <div class="card-price py-2" data-inr="₹3,149" data-usd="$37.80">
+                                    ₹3,149 / <span>month</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fad fa-memory"></i> 32 GB DDR4 RAM</li>
+                                        <li><i class="fad fa-microchip"></i> Unlimited CPU Power</li>
+                                        <li><i class="fad fa-hdd"></i> 192 GB NVMe SSD</li>
+                                        <li><i class="fad fa-shield-check"></i> 5 backups</li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn">Order now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            		</div>
+            	</div>
+            </div>
+		</div>
+	</div>
+	<!-- Server Type -->
+	<div class="servertype pt-1 pb-5">
+		<div class="container-fluid container-custom">
+			<div class="title text-center mb-5">
+				<h4>Server Types</h4>
+				<p>Choose your Minecraft Plugin for server</p>
+			</div>
+			<div class="owl-carousel" id="servertypes">
+				<div class="item text-center">
+					<img src="assets/images/servertypes/bukkit.png" alt="Bukkit" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Bukkit">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/bungeecord.png" alt="Bungeecord" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Bungeecord">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/fabric.png" alt="Fabric" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Fabric">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/forge.png" alt="Forge" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Forge">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/ftb.png" alt="FTB" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="FTB">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/papermc.png" alt="PaperMC" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="PaperMC">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/purpur.svg" alt="Purpur" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Purpur">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/spigot.png" alt="Spigot" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Spigot">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/sponge.png" alt="Sponge" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Sponge">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Panel -->
+	<div class="panel py-5">
+		<div class="container-fluid container-custom">
+			<div class="row d-flex justify-content-between">
+				<div class="col-md-5 d-flex align-items-center">
+					<img src="assets/images/panel.webp" class="img-fluid" alt="Game Panel">
+				</div>
+				<div class="col-md-7">
+					<div class="panel_content">
+						<h2>Powerful Controlpanel</h2>
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut vero molestias explicabo, id maxime laboriosam, ab, rem, debitis est voluptatibus facilis? Hic aperiam dolorum ab tempora corrupti, beatae architecto voluptatem!</p>
+						<ul>
+							<li><i class="fas fa-check-circle"></i> Easy To Use</li>
+							<li><i class="fas fa-check-circle"></i> Fast And Secured big anti ddos </li>
+							<li><i class="fas fa-check-circle"></i> Pre installed Plugins and auto setup</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</selection>
+
+	<footer class="py-5">
+	    <div class="container-fluid container-custom">
+	        <div class="row">
+	            <div class="col-lg-9">
+	                <div class="row">
+	                    <div class="col-lg-4">
+	                        <h4>Services</h4>
+	                        <ul>
+	                            <li><a href="game-hosting.html">Game Hosting</a></li>
+	                            <li><a href="bot-hosting.html">Bot Hosting </a></li>
+	                            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+	                        </ul>
+	                    </div>
+	                    <div class="col-lg-4">
+	                        <h4>Support</h4>
+	                        <ul>
+	                            <li><a href="contact.html">Contact</a></li>
+	                            <li><a href="#">Discord</a></li>
+	                        </ul>
+	                    </div>
+	                    <div class="col-lg-4">
+	                        <h4>Company</h4>
+	                        <ul>
+	                            <li><a href="refund-policy.html">Refund Policy</a></li>
+	                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+	                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-lg-3">
+	                <h3>
+	                    <img class="img-fluid" src="assets/images/logo.svg" alt="CORAMTIX Footer Logo" /> <span>CORAMTIX</span>
+	                </h3>
+	                <p class="copy">&copy; 2025 CoRamTix All Rights Reserved</p>
+	            </div>
+	        </div>
+	    </div>
+	</footer>
+	<!-- Jquery v3.6.1 -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Bootstrap v5.2.1 -->
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- OWL Slider v2.3.4 -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+	<script>
+        // Currency Switcher Logic
+        function switchCurrency() {
+            const isUSD = document.getElementById('currency-toggle').checked;
+            const priceElements = document.querySelectorAll('.card-price');
+            const inrLabel = document.getElementById('currency-inr-label');
+            const usdLabel = document.getElementById('currency-usd-label');
+
+            priceElements.forEach(priceElement => {
+                // Remove commas from INR data for correct display
+                const rawPrice = isUSD 
+                    ? priceElement.getAttribute('data-usd') 
+                    : priceElement.getAttribute('data-inr');
+                
+                // Keep the price formatting simple and based on the stored attribute
+                priceElement.innerHTML = `${rawPrice} / <span>month</span>`;
+            });
+
+            // Update label colors for visual feedback
+            inrLabel.style.color = isUSD ? '#ccc' : '#fff';
+            usdLabel.style.color = isUSD ? '#fff' : '#ccc';
+        }
+
+		// Reviews //
+    	jQuery("#servertypes").owlCarousel({autoplay:!0,rewind:!0,margin:20,mouseDrag:!0,nav:!1,dots:!1,lazyLoad:!0,responsive:{0:{items:1},576:{items:2},768:{items:2},1024:{items:3},1366:{items:4}}});
+		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+	</script>
+	<script src="assets/js/custom.js"></script>
+</body>
+</html>
+
