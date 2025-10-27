@@ -867,3 +867,21 @@ footer ul a:hover {
         max-width: 65px;
     }
 }
+.fixed-top {
+    transition: all 0.35s ease-in-out;
+}
+
+/* When scrolled */
+.fixed-top.scrolled {
+    background: rgba(0, 0, 0, 0.75); /* Change as needed */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* Smooth slide up/down effect */
+.fixed-top.scrolling-down {
+    transform: translateY(-100%);
+}
+
+.fixed-top.scrolling-up {
+    transform: translateY(0);
+}
