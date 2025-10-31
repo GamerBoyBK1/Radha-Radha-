@@ -1,4 +1,4 @@
-/* custom.css - AGGRESSIVELY Optimized for 0 Lag Low-End Devices (Max Performance) */
+/* custom.css - Ultra Optimized for Low-End Devices */
 :root {
   --background: #ffffff;
   --dark: #2d3748;
@@ -7,43 +7,31 @@
   --light: #6c757d;
   --gray: #adb5bd;
   --blue: #7200ff;
-  /* Reduced complexity and count of shadows for lower GPU/CPU load */
-  --shadow: 0 2px 5px rgba(114, 0, 255, 0.05); /* Lighter shadow */
-  --shadow-hover: 0 4px 10px rgba(114, 0, 255, 0.08); /* Lighter hover shadow */
-  --border-radius: 8px; /* Slightly smaller radius might be faster */
-  --transition: all 0.15s ease-out; /* Much shorter and simpler transition */
+  --shadow: 0 2px 10px rgba(114, 0, 255, 0.08);
+  --shadow-hover: 0 4px 15px rgba(114, 0, 255, 0.12);
+  --border-radius: 8px;
+  --transition: all 0.2s ease;
 }
 
-/* * ---------------------------------------
- * AGGRESSIVE Performance Optimizations
- * ---------------------------------------
- */
-
-/* Eliminate or drastically reduce all transitions/animations for 0 lag */
-*, *::before, *::after {
-  transition: none !important; /* Critical: Eliminate all transitions */
-  animation: none !important; /* Critical: Eliminate all animations */
-  /* Remove will-change as it can sometimes cause performance issues if overused or on low-end devices */
-  will-change: auto !important; 
+/* Critical Performance Optimizations */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  /* Critical for performance on low-end devices: removes smooth scrolling */
-  scroll-behavior: auto !important; 
+  scroll-behavior: auto; /* Disable smooth scrolling for performance */
 }
 
 body {
   background: var(--white);
-  /* Fallback to simple, fast system font */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+  font-family: "Poppins", sans-serif;
   color: var(--dark);
-  line-height: 1.6;
+  line-height: 1.5;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  /* Use 'contain' to isolate layout/style for faster rendering */
-  contain: layout style;
 }
 
 .container-custom {
@@ -54,34 +42,20 @@ body {
 
 .blue {color: var(--blue);}
 
-/* Optimized Navbar */
+/* Ultra Optimized Navbar */
 .navbar {
-  padding: 15px 0; /* Standardize padding to reduce re-layout on scroll */
+  padding: 15px 0;
   background: var(--white) !important;
   border-bottom: 1px solid var(--light-dark);
-  /* Remove existing transform/will-change for simplicity and speed */
-  transform: none; 
-}
-
-/* Fixed-top optimization */
-.fixed-top.scrolled {
-  padding: 15px 0; /* Keep consistent padding */
-  background: var(--white) !important; /* Remove transparency */
-  backdrop-filter: none; /* Critical: Eliminate expensive blur effect */
-  box-shadow: var(--shadow); /* Use simplified shadow */
-}
-
-.navbar-toggler {
-  border: none !important;
-  box-shadow: none !important;
-  color: var(--blue);
-  transform: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar-brand {
   font-weight: 600;
   color: var(--dark) !important;
-  font-size: 1.4rem; /* Slightly smaller font for minor performance gain */
+  font-size: 1.3rem;
 }
 
 .navbar-brand span {
@@ -91,11 +65,10 @@ body {
 
 .navbar-nav .nav-link {
   font-weight: 500;
-  font-size: 15px; /* Slightly smaller font */
+  font-size: 15px;
   color: var(--dark) !important;
-  padding: 6px 12px; /* Reduced padding */
+  padding: 6px 12px;
   border-radius: 6px;
-  transform: none;
 }
 
 .navbar-nav .nav-link:hover,
@@ -105,45 +78,39 @@ body {
 }
 
 .navbar .btn {
-  /* Simplified padding and font size */
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  color: var(--white) !important;
   padding: 8px 20px;
   font-size: 14px;
-  margin-left: 10px;
-  transform: none; /* Remove transform */
-}
-
-.navbar .btn:hover {
-  background: transparent;
-  color: var(--blue) !important;
-  transform: none; /* Critical: Eliminate translateY and box-shadow-hover on low-end */
-  box-shadow: none; 
-}
-
-/* Optimized Dropdown */
-.dropdown-menu {
-  box-shadow: var(--shadow);
-  padding: 0.5rem; /* Reduced padding */
+  font-weight: 600;
   border-radius: 8px;
-  transform: none;
+  margin-left: 10px;
+}
+
+/* Simplified Dropdown */
+.dropdown-menu {
+  background: var(--white);
+  border: 1px solid var(--light-dark);
+  padding: 0.5rem;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
 }
 
 .dropdown-item {
+  color: var(--dark);
+  font-weight: 500;
   font-size: 14px;
-  padding: 6px 12px;
   border-radius: 6px;
+  padding: 6px 12px;
 }
 
-/* Optimized Hero Section */
+/* Optimized Hero Section - Reduced Effects */
 .hero {
-  background: var(--blue); /* Simplified background: Remove gradient for perf */
-  height: 600px; /* Reduced height */
+  background: #7200ff; /* Simplified from gradient */
+  height: 500px;
   position: relative;
   overflow: hidden;
-  transform: none;
-}
-
-.hero:before {
-  display: none; /* Critical: Eliminate expensive radial-gradient pseudo-element */
 }
 
 .hero .hero_content {
@@ -152,260 +119,580 @@ body {
 }
 
 .hero .hero_content h2 {
-  font-size: 2.5rem; /* Reduced font size */
-  transform: none;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero .hero_content p {
-  font-size: 1.1rem;
-  transform: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero .hero_content .btn {
-  padding: 10px 30px; /* Reduced padding */
+  background: var(--white);
+  border: 1px solid var(--white);
+  color: var(--blue);
+  padding: 10px 30px;
   font-size: 15px;
-  transform: none;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
-.hero .hero_content .btn:hover {
-  background: transparent;
-  color: var(--white);
-  transform: none; /* Critical: Eliminate translateY and box-shadow */
-  box-shadow: none;
+/* Optimized Services Section - Reduced Animations */
+.services {
+  padding: 3rem 0;
+  background: var(--white);
 }
 
-/* Optimized Sections */
-.services, .features, .review {
-  padding: 3rem 0; /* Reduced padding for smaller viewport/faster scroll */
-}
-
-/* Box styles - Critical: Eliminate hover transforms and use simpler shadow */
-.service-box, .service-boxo, .features .features-box, .review .card {
-  box-shadow: var(--shadow); /* Apply simpler base shadow */
+.service-box, .service-boxo {
+  background: var(--white);
+  padding: 1.5rem 1rem;
+  border-radius: var(--border-radius);
   border: 1px solid var(--light-dark);
-  transform: none;
-  will-change: auto;
-  contain: strict; /* More aggressive containment */
+  text-align: center;
+  height: 100%;
+  margin-bottom: 1.5rem;
 }
 
-.service-box:hover, .service-boxo:hover, .features .features-box:hover, .review .card:hover {
-  transform: none; /* Critical: Eliminate hover transform */
-  box-shadow: var(--shadow); /* Keep simpler base shadow, no complex hover shadow */
-  border-color: var(--light-dark); /* Do not change border color on hover */
+.service-box h3, .service-boxo h3 {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
 }
 
-.service-box h3, .service-boxo h3, .features .features-box h2 {
-  font-size: 1.4rem; /* Reduced font size */
+.service-box p, .service-boxo p {
+  color: var(--light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
-/* Feature Icons */
-.ssd-drive, .firewall, .setup, .cpu, .support {
-  fill: var(--blue);
-  transform: none;
+/* Section Titles */
+.title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title h4 {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.title p {
+  color: var(--light);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Optimized Features Section */
+.features {
+  padding: 3rem 0;
+  background: var(--white);
+}
+
+.features .features-box {
+  background: var(--white);
+  padding: 1.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-dark);
+  text-align: center;
+  height: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.features .features-box h2 {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 1rem 0 0.8rem;
+}
+
+.features .features-box p {
+  color: var(--light);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Optimized Review Section */
 .review {
-  background: var(--white); /* Lighter background than --light-dark */
+  padding: 3rem 0;
+  background: var(--light-dark);
+}
+
+.review .card {
+  background: var(--white);
+  border: 1px solid var(--light-dark);
+  border-radius: var(--border-radius);
+  height: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.review .card .card-body {
+  padding: 1.5rem;
+}
+
+.review .card h3 {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.review .card p {
+  color: var(--light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.review .card a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.reviews_star {
+  display: flex;
+  margin-left: 8px;
+}
+
+.reviews_star img {
+  width: 16px;
+  height: 16px;
+  margin-right: 1px;
 }
 
 /* Optimized Footer */
 footer {
-  padding: 3rem 0 1.5rem; /* Reduced padding */
-  transform: none;
+  background: var(--white);
+  border-top: 1px solid var(--light-dark);
+  padding: 2.5rem 0 1.5rem;
 }
 
-footer ul a:hover {
+footer h3, footer h4 {
+  color: var(--dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer h3 span {
   color: var(--blue);
-  padding-left: 0; /* Critical: Eliminate transition on padding-left */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.4rem;
+}
+
+footer ul a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.copy {
+  color: var(--light);
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Optimized Buttons */
 .btn {
   border-radius: 8px;
-  padding: 8px 24px; /* Reduced padding */
-  transform: none;
-  will-change: auto;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
 }
 
-.btn-primary:hover, .btn-server:hover {
-  background: transparent;
-  color: var(--blue);
-  transform: none; /* Critical: Eliminate hover transform */
-  box-shadow: none;
+.btn-primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
 }
 
 /* Optimized Server Types Section */
+.server-types {
+  padding: 2rem 0;
+  background: var(--white);
+}
+
+.server-types .title {
+  margin-bottom: 2rem;
+}
+
+.server-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .server-card {
-  padding: 1.5rem; /* Reduced padding */
-  transform: none;
+  background: var(--white);
+  border: 1px solid var(--light-dark);
+  border-radius: var(--border-radius);
+  padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.server-card::before {
-  display: none; /* Critical: Eliminate animated pseudo-element */
-}
-
-.server-card:hover {
-  transform: none; /* Critical: Eliminate hover transform */
-  box-shadow: var(--shadow);
-  border-color: var(--light-dark); /* No border change on hover */
-}
-
-.server-card:hover::before {
-  transform: scaleY(0); /* Ensure hidden if not display:none */
+.server-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .server-icon {
-  width: 40px; /* Smaller icon size */
+  width: 40px;
   height: 40px;
-  border-radius: 6px;
-  margin-right: 0.8rem;
-  transform: none;
-}
-
-.server-card:hover .server-icon {
   background: rgba(114, 0, 255, 0.1);
-  transform: none; /* Eliminate icon scale transform */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.8rem;
 }
 
-.server-card:hover .server-icon svg {
-  fill: var(--blue); /* No color change */
+.server-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--blue);
 }
 
 .server-header h4 {
+  color: var(--dark);
+  font-weight: 700;
   font-size: 1.1rem;
+  margin: 0;
+}
+
+.server-specs {
+  margin-bottom: 1rem;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--light-dark);
+  font-size: 0.85rem;
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--light);
+  font-weight: 500;
+}
+
+.spec-value {
+  color: var(--dark);
+  font-weight: 600;
 }
 
 .server-price {
+  text-align: center;
   margin-bottom: 1rem;
 }
 
 .price {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.2rem;
+}
+
+.price-period {
+  color: var(--light);
+  font-size: 0.85rem;
+}
+
+.server-features {
+  margin-bottom: 1rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--dark);
+}
+
+.feature-list li::before {
+  content: '✓';
+  color: var(--blue);
+  font-weight: bold;
+  margin-right: 0.4rem;
+}
+
+.server-action {
+  text-align: center;
 }
 
 .btn-server {
-  padding: 0.7rem 1.5rem;
-  font-size: 0.9rem;
-  transform: none;
+  background: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--blue);
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  width: 100%;
 }
 
 /* Compact View Toggle */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
 .toggle-btn {
-  padding: 0.4rem 1.2rem; /* Reduced padding */
+  background: var(--white);
+  border: 1px solid var(--light-dark);
+  color: var(--light);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
   font-size: 0.9rem;
-  transform: none;
+  cursor: pointer;
+}
+
+.toggle-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+/* Compact View */
+.server-types.compact .server-types-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.server-types.compact .server-card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.server-types.compact .server-header {
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.server-types.compact .server-icon {
+  margin-right: 0;
+  margin-bottom: 0.6rem;
+}
+
+.server-types.compact .server-specs {
+  display: none;
+}
+
+.server-types.compact .server-features {
+  display: none;
+}
+
+.server-types.compact .price {
+  font-size: 1.3rem;
 }
 
 /* Server Types Icons - Optimized */
-#servertypes .item img, .os img {
-  max-width: 70px; /* Smaller max-width for faster rendering */
-  transform: none;
+#servertypes .item img {
+  max-width: 70px;
+  height: auto;
+  margin: auto;
 }
 
-#servertypes .item img:hover, .os img:hover {
-  transform: none; /* Critical: Eliminate hover scale transform */
+#servertypes .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* VPS OS Icons Styling - Optimized */
+.os img {
+  max-width: 70px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.os h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.os .col-lg-3 {
+  margin-bottom: 20px;
+}
+
+/* Performance Badge */
+.performance-badge {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 /* Popular Server Highlight */
 .server-card.popular {
-  border: 1px solid var(--blue); /* Simpler border, not 2px */
-  transform: none; /* Critical: Eliminate initial scale */
+  border: 1px solid var(--blue);
 }
 
 .server-card.popular::after {
-  padding: 0.2rem 1rem; /* Reduced padding */
-  font-size: 0.7rem;
+  content: 'Popular';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.2rem 1rem;
+  border-radius: 0 0 6px 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 /* Utility Classes */
-.shadow-hover:hover { 
-  box-shadow: var(--shadow); /* Use base shadow only */
+.text-purple { color: var(--blue); }
+.bg-purple { background-color: var(--blue); }
+.border-purple { border-color: var(--blue); }
+
+.shadow-custom { box-shadow: var(--shadow); }
+
+/* Fix for service boxes */
+.service-boxo {
+  background: var(--white);
 }
 
-/* Loading Animation - KEEP @keyframes but DISABLE for '0 lag' */
-.fade-in-up {
-  animation: none !important; /* Critical: Disable load-in animation */
-}
-
-/* Reduce Motion Support - ENHANCED */
-@media (prefers-reduced-motion: reduce) {
-  /* Already well-optimized, but ensure full override */
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  
-  .service-box:hover, .service-boxo:hover, .features-box:hover, .server-card:hover, .review .card:hover, .navbar .btn:hover, .hero .hero_content .btn:hover, .btn-server:hover {
-    transform: none !important;
-    box-shadow: var(--shadow) !important;
-  }
-  
-  .server-card:hover::before {
-    transform: none !important;
-  }
-}
-
-/* Touch Device Optimizations - ENHANCED */
-@media (hover: none) and (pointer: coarse) {
-  /* Ensure all hovers are stripped */
-  .service-box:hover, .service-boxo:hover, .features-box:hover, .server-card:hover, .review .card:hover, .navbar .btn:hover, .hero .hero_content .btn:hover, .btn-server:hover, #servertypes .item img:hover, .os img:hover {
-    transform: none !important;
-    box-shadow: var(--shadow) !important;
-    border-color: var(--light-dark) !important;
-    background: initial !important;
-    color: initial !important;
-  }
-}
-
-/* Critical Content Optimization */
-.hero,
-.navbar,
-.services,
-.features,
-.review,
-footer {
-  /* More aggressive content visibility on all major sections */
-  content-visibility: auto;
-  contain: layout style;
-}
-
-/* Optimized Responsive Design */
+/* Ultra Low-End Device Optimizations */
 @media (max-width: 768px) {
-  /* Reduce animations on mobile for better performance - OVERRIDDEN by global 'transition: none' */
+  .hero {
+    height: 400px;
+  }
+  
+  .hero .hero_content h2 {
+    font-size: 2rem;
+  }
+  
+  .title h4 {
+    font-size: 1.6rem;
+  }
+  
+  .server-types-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .view-toggle {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .toggle-btn {
+    width: 180px;
+  }
+  
+  /* Remove all hover effects on touch devices */
   .service-box:hover,
   .service-boxo:hover,
   .features-box:hover,
-  .server-card:hover {
-    transform: none; 
-    box-shadow: var(--shadow);
+  .server-card:hover,
+  .review .card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
 @media (max-width: 576px) {
-  /* Ultra-low end device optimizations - OVERRIDDEN by global 'transition: none' */
-  .service-box, .service-boxo, .features-box, .server-card {
-    transition: none !important;
+  .server-types {
+    padding: 1.5rem 0;
   }
   
-  .service-box:hover, .service-boxo:hover, .features-box:hover, .server-card:hover {
-    transform: none !important;
-    box-shadow: var(--shadow) !important;
+  .server-card {
+    padding: 1rem;
+  }
+  
+  .server-header h4 {
+    font-size: 1rem;
+  }
+  
+  .price {
+    font-size: 1.3rem;
+  }
+  
+  #servertypes .item img,
+  .os img {
+    max-width: 50px;
+  }
+  
+  /* Remove all animations and transitions for ultra-low end devices */
+  * {
+    transition: none !important;
+    animation: none !important;
   }
 }
 
 /* Optimized Image Rendering */
 img {
-  image-rendering: auto; /* Revert to 'auto' for possibly faster rendering on low-end devices */
   max-width: 100%;
   height: auto;
 }
 
-/* Prevent Layout Shifts - ENHANCED */
-.server-types-grid,
-.services .row,
-.features .row,
-.review .row {
-  contain: strict; /* Use 'strict' for maximum containment isolation */
+/* Print Styles */
+@media print {
+  .navbar,
+  .hero .btn,
+  footer {
+    display: none;
+  }
+  
+  .hero {
+    background: #7200ff !important;
+    height: auto;
+  }
+}
+
+/* Critical: Remove all animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
