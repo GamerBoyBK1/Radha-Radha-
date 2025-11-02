@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoRamTix Hosting - 404 - Page Not Found</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+
+  <style>
+    /* Local styles specific to 404 page */
+    body {
+      background: var(--blue);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .error-container {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #f8f9fa;
+    }
+
+    p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 25px;
+    }
+
+    a.btn-home {
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    a.btn-home:hover {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--blue);
+      box-shadow: var(--shadow-hover);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 5rem; }
+      h2 { font-size: 1.5rem; }
+      p { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>404</h1>
+    <h2>Oops! Page Not Found</h2>
+    <p>The page you are looking for might have been removed or is temporarily unavailable.</p>
+    <a href="/" class="btn-home">Back to Home</a>
+  </div>
+</body>
+</html>
