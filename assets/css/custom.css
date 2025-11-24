@@ -696,3 +696,53 @@ img {
     scroll-behavior: auto !important;
   }
 }
+/* --- New CSS for Enhanced Services Section --- */
+
+.services {
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.service-box {
+    /* Base styling for the card */
+    background-color: #ffffff;
+    border: 1px solid #e9ecef; /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+/* Hover Effect: Lifts the card and adds a strong shadow */
+.service-box.animated-card:hover {
+    transform: translateY(-5px); /* Lift up slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+}
+
+/* Service Icon Styling */
+.service-icon {
+    font-size: 3rem; /* Large icon size */
+    color: #007bff; /* Primary brand color for the icon */
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.1); /* Light background circle for the icon */
+    display: inline-block; /* To allow padding/background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow on the icon */
+}
+
+.service-box h3 {
+    font-weight: 700; /* Make the title bolder */
+    color: #343a40; /* Darker text for good readability */
+}
+
+.service-box p {
+    color: #6c757d; /* Slightly muted text for description */
+}
+
+/* Button Styling */
+.service-btn {
+    border-radius: 50px; /* Pill-shaped button */
+    padding: 10px 30px;
+    font-weight: 600;
+}
+
+/* Optional: Subtle border color change on hover */
+.service-box.animated-card:hover .service-icon {
+    color: #0056b3; /* Darker blue on hover */
+}
