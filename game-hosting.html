@@ -7,7 +7,6 @@
   <title>CoRamTix - Game Hosting</title>
   <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 
-	<!-- SEO -->
 	<meta property="og:site_name" content="CoRamTix">
 	<meta property="og:title" content="CoRamTix - Game Hosting">
 	<meta name="twitter:card" content="summary">
@@ -26,16 +25,47 @@
 	<link rel="shortcut icon" href="game-hosting.html">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="msapplication-config" content="">
-	<!-- End SEO -->
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/custom.css">
-</head>
+  
+  <style>
+    /* Click Animation (from previous step) */
+    .btn, 
+    .dropdown-item,
+    .service-box a.btn-primary {
+        transition: transform 0.1s ease-out;
+    }
+    
+    .btn:active, 
+    .dropdown-item:active,
+    .service-box a.btn-primary:active {
+        transform: scale(0.98); 
+    }
+    
+    #panel:active {
+        transform: scale(0.98);
+    }
+
+    /* ✨ Dynamic Service Box Styles (for "Image Jasy Kar Do") */
+    .service-box {
+        transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+        /* Subtle shadow to give depth */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        border-radius: 8px; /* Rounded corners for modern look */
+    }
+
+    .service-box:hover {
+        /* Lifts the box up slightly */
+        transform: translateY(-5px); 
+        /* Stronger shadow on hover for a better visual feedback */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  </head>
 
 <body>
 	<nav id="navbar_top" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -127,8 +157,7 @@ Hosting</h2>
 	</div>
 </div>
 
-  <!-- ✅ HOSTING PLANS -->
-<section id="plans" class="py-5">
+  <section id="plans" class="py-5">
 	<div class="container">
 		<div class="title text-center mb-5">
 			<h2>Choose Your Game</h2>
@@ -137,7 +166,6 @@ Hosting</h2>
 		
 		<div class="row g-4">
 			
-			<!-- Game Items Loop -->
 			<div class="col-md-4">
 				<div class="service-box text-center p-4">
 					<img src="assets/images/game_icons/minecraft.webp" height="80">
@@ -222,7 +250,6 @@ Hosting</h2>
 	  </div>
 	</footer>
 
-  <!-- JS -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
