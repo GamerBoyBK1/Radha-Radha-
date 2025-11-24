@@ -31,6 +31,57 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/animations.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/service.css">
+    
+    <style>
+        .services {
+            background-color: #f8f9fa; /* Light background for contrast */
+        }
+
+        .service-box {
+            /* Base styling for the card */
+            background-color: #ffffff;
+            border: 1px solid #e9ecef; /* Subtle border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+        }
+
+        /* Hover Effect: Lifts the card and adds a strong shadow */
+        .service-box.animated-card:hover {
+            transform: translateY(-5px); /* Lift up slightly */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+        }
+
+        /* Service Icon Styling */
+        .service-icon {
+            font-size: 3rem; /* Large icon size */
+            color: #007bff; /* Primary brand color for the icon */
+            padding: 15px;
+            border-radius: 50%;
+            background-color: rgba(0, 123, 255, 0.1); /* Light background circle for the icon */
+            display: inline-block; /* To allow padding/background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow on the icon */
+        }
+
+        .service-box h3 {
+            font-weight: 700; /* Make the title bolder */
+            color: #343a40; /* Darker text for good readability */
+        }
+
+        .service-box p {
+            color: #6c757d; /* Slightly muted text for description */
+        }
+
+        /* Button Styling */
+        .service-btn {
+            border-radius: 50px; /* Pill-shaped button */
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+
+        /* Optional: Subtle border color change on hover */
+        .service-box.animated-card:hover .service-icon {
+            color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
 </head>
 <body>
 	
@@ -128,25 +179,27 @@
 		</div>
         <div class="row">
 			<div class="col-md-4 mb-4">
-				<div class="service-box text-center p-4 rounded-3 h-100">
+				<div class="service-box text-center p-4 rounded-3 h-100 animated-card">
+                    <i class="fas fa-gamepad service-icon mb-3"></i> 
 					<h3 class="mb-3">Game Hosting</h3>
 					<p> Low-latency servers across Asia with unbeatable uptime for competitive play.</p>
-					<a href="game-hosting" class="btn btn-primary mt-3">View Plans</a>
-
+					<a href="game-hosting" class="btn btn-primary mt-3 service-btn">View Plans</a>
 			    </div>
             </div>
 			<div class="col-md-4 mb-4">
-				<div class="service-box text-center p-4 rounded-3 h-100">
+				<div class="service-box text-center p-4 rounded-3 h-100 animated-card">
+                    <i class="fab fa-discord service-icon mb-3"></i>
 					<h3 class="mb-3">Bot Hosting</h3>
 					<p>Dedicated hosting for Discord bots and automation applications with DDoS protection.</p>
-					<a href="bot-hosting" class="btn btn-primary mt-3">View Plans</a>
+					<a href="bot-hosting" class="btn btn-primary mt-3 service-btn">View Plans</a>
 				</div>
 			</div>
 			<div class="col-md-4 mb-4">
-				<div class="service-box text-center p-4 rounded-3 h-100">
+				<div class="service-box text-center p-4 rounded-3 h-100 animated-card">
+                    <i class="fas fa-server service-icon mb-3"></i>
 					<h3 class="mb-3">VPS Hosting</h3>
 					<p>Fully managed Virtual Private Servers for websites, databases, and custom apps.</p>
-					<a href="vps-hosting" class="btn btn-primary mt-3">View Plans</a>
+					<a href="vps-hosting" class="btn btn-primary mt-3 service-btn">View Plans</a>
 				</div>
 			</div>
 		</div>
