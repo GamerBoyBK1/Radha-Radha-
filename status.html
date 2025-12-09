@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CoRamTix System Status</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* --- ENHANCEMENT: Better Font --- */
+    background:#f6f8fa;
+    padding:20px;
+    margin: 0; /* --- ENHANCEMENT --- */
+}
+h1 {
+    text-align:center;
+    margin-bottom:15px;
+    color: #34495e; /* --- ENHANCEMENT --- */
+    font-size: 2.2em;
+    font-weight: 300; /* --- ENHANCEMENT: Lighter Weight --- */
+}
+
+/* --- ENHANCEMENT: Header Icon Animation --- */
+.header-icon {
+    display: inline-block;
+    animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Dynamic Alert */
+.alert {
+    /* --- ENHANCEMENT: Smoother look/shadow --- */
+    display:none;
+    background:#fff3cd; /* Light warning yellow */
+    border-left:5px solid #ffc107; /* Stronger accent line */
+    color:#856404;
+    padding:15px 20px;
+    border-radius:4px;
+    max-width:650px;
+    margin:0 auto 25px;
+    font-size:15px;
+    font-weight:600; /* --- ENHANCEMENT: Slightly less bold --- */
+    text-align:left;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Groups */
+.group {
+    margin-top:30px; /* --- ENHANCEMENT: More spacing --- */
+    font-weight:600; /* --- ENHANCEMENT: Slightly lighter bold --- */
+    color: #34495e;
+    font-size: 1.1em;
+    max-width:650px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 5px; /* --- ENHANCEMENT: Spacing for next section --- */
+}
+
+/* Status box */
+.status-box {
+    background:white;
+    padding:16px 20px; /* --- ENHANCEMENT: More padding --- */
+    border-radius:8px; /* --- ENHANCEMENT: Rounder corners --- */
+    margin:10px auto;
+    max-width:650px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05); /* --- ENHANCEMENT: Finer shadow --- */
+    transition: transform 0.2s ease-out; /* --- ENHANCEMENT: Hover effect --- */
+}
+.status-box:hover {
+    transform: translateY(-2px);
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.service-name {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* Badges */
+.badge {
+    padding:6px 16px; /* --- ENHANCEMENT: Larger badge --- */
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    color:white;
+    min-width: 85px; /* --- ENHANCEMENT: Consistent badge width --- */
+    text-align: center;
+    text-transform: uppercase;
+}
+.online { background:#27ae60; } /* --- ENHANCEMENT: Darker, richer green --- */
+.offline { background:#c0392b; } /* --- ENHANCEMENT: Darker, richer red --- */
+.checking { 
+    background:#95a5a6; 
+    color: #fff; /* --- ENHANCEMENT --- */
+    animation: checking-pulse 1.5s infinite; /* --- ENHANCEMENT: Visual feedback for checking --- */
+}
+.maintenance { background:#f39c12; color:#fff; } /* --- ENHANCEMENT: Orange color and white text --- */
+
+/* --- ENHANCEMENT: Checking animation --- */
+@keyframes checking-pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* --- ENHANCEMENT: Loading indicator for full page --- */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: block;
+    margin: 20px auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* --- ENHANCEMENT: Hidden state for content while loading --- */
+#status.loading { opacity: 0.6; pointer-events: none; }
+
+
+footer {
+    text-align:center;
+    margin-top:40px; /* --- ENHANCEMENT: More spacing --- */
+    font-size:13px;
+    color:#7f8c8d; /* --- ENHANCEMENT: Softer color --- */
+}
+</style>
+</head>
+<body>
+
+<h1><span class="header-icon">⚫</span> CoRamTix Services Status</h1>
+
+<div class="alert" id="globalAlert"></div>
+
+<div id="loader" class="loader"></div>
+<div id="status"></div>
+
+<footer>
+    Auto refresh every 60 seconds
+</footer>
+
+<script>
+// ================= SERVICES =================
+const services = [
+    { group:"Web Hosting", name:"Node 1 (IND) ", url:"http://node-in-2.coramtix.in:8080/", maintenance:false },
+
+    { group:"Game Hosting", name:"Node 1 (IND) ", url:"https://example.com/game-in-1", maintenance:true }, /* --- ENHANCEMENT: Unique URL --- */
+    { group:"Game Hosting", name:"Node 2 (SG) ", url:"https://example.com/game-sg-2", maintenance:false },
+    { group:"Game Hosting", name:"Node 3 (IND) ", url:"https://example.com/game-uk-3", maintenance:false },
+
+    { group:"Bot Hosting", name:"Node 1 (EU)", url:"https://example.com/bot-eu-1", maintenance:false }, /* --- ENHANCEMENT: Clearer name --- */
+
+    { group:"VPS Hosting", name:"Node 8 (USA)", url:"https://example.com/vps-us-8", maintenance:false }
+];
+
+const container = document.getElementById("status");
+const loader = document.getElementById("loader"); /* --- ENHANCEMENT --- */
+const alertBox = document.getElementById("globalAlert");
+const header = document.querySelector('h1 .header-icon'); /* --- ENHANCEMENT --- */
+let currentGroup = "";
+
+let hasOffline = false;
+let hasMaintenance = false;
+let servicesCheckedCount = 0; /* --- ENHANCEMENT --- */
+
+// ================= GROUP =================
+function createGroup(title) {
+    const div = document.createElement("div");
+    div.className = "group";
+    div.textContent = title;
+    container.appendChild(div);
+}
+
+// ================= CHECK SERVICE =================
+function checkService(service) {
+    const row = document.createElement("div");
+    row.className = "status-box";
+    row.innerHTML = `
+        <span class="service-name">${service.name}</span>
+        <span class="badge checking">CHECKING</span>
+    `;
+    container.appendChild(row);
+
+    // Maintenance
+    if(service.maintenance) {
+        servicesCheckedCount++; /* --- ENHANCEMENT --- */
+        hasMaintenance = true;
+        row.querySelector(".badge").textContent = "MAINTENANCE";
+        row.querySelector(".badge").className = "badge maintenance";
+        return;
+    }
+
+    // --- ENHANCEMENT: Use AbortController for better control/timeout
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    // Timeout after 10 seconds (for example)
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    fetch(service.url, { mode: "no-cors", signal })
+        .then(() => {
+            clearTimeout(timeoutId);
+            row.querySelector(".badge").textContent = "ONLINE";
+            row.querySelector(".badge").className = "badge online";
+        })
+        .catch(error => {
+            clearTimeout(timeoutId);
+            hasOffline = true;
+            row.querySelector(".badge").textContent = "OFFLINE";
+            row.querySelector(".badge").className = "badge offline";
+            // Optional: Log the error for debugging, e.g., console.error(`Failed to check ${service.name}:`, error.name);
+        })
+        .finally(() => {
+            servicesCheckedCount++; /* --- ENHANCEMENT --- */
+            // Check if all services are checked to update UI once
+            if (servicesCheckedCount === services.length) {
+                updateVisuals();
+            }
+        });
+}
+
+// ================= VISUALS & ALERT LOGIC =================
+function updateVisuals() {
+    loader.style.display = "none";
+    container.style.opacity = 1;
+    container.classList.remove('loading'); /* --- ENHANCEMENT --- */
+
+    if(hasMaintenance) {
+        alertBox.style.display = "block";
+        alertBox.innerHTML = "🟡 **Scheduled Maintenance:** One or more services are currently undergoing maintenance.";
+        header.textContent = "🟡"; /* --- ENHANCEMENT: Update header icon --- */
+        header.style.animation = 'none';
+    } 
+    else if(hasOffline) {
+        alertBox.style.display = "block";
+        alertBox.innerHTML = "🔴 **Service Disruption:** One or more critical systems are offline. Our team is working on a fix.";
+        alertBox.style.background = "#f8d7da"; /* Light error red */
+        alertBox.style.borderLeftColor = "#dc3545"; /* Stronger red line */
+        alertBox.style.color = "#721c24";
+        header.textContent = "🔴"; /* --- ENHANCEMENT: Update header icon --- */
+        header.style.animation = 'none';
+    } 
+    else {
+        alertBox.style.display = "none";
+        header.textContent = "🟢"; /* --- ENHANCEMENT: Update header icon --- */
+        header.style.animation = 'pulse 2s infinite ease-in-out';
+    }
+}
+
+// ================= LOAD STATUS =================
+function loadStatus() {
+    container.innerHTML = "";
+    loader.style.display = "block"; /* --- ENHANCEMENT --- */
+    container.classList.add('loading'); /* --- ENHANCEMENT --- */
+
+    currentGroup = "";
+    hasOffline = false;
+    hasMaintenance = false;
+    servicesCheckedCount = 0; /* --- ENHANCEMENT --- */
+
+    services.forEach(service => {
+        if(service.group !== currentGroup) {
+            currentGroup = service.group;
+            createGroup(service.group);
+        }
+        checkService(service);
+    });
+
+    // Fallback: If services list is empty, update visuals immediately
+    if (services.length === 0) {
+        updateVisuals();
+    }
+}
+
+loadStatus();
+setInterval(loadStatus, 60000);
+</script>
+
+</body>
+</html>
