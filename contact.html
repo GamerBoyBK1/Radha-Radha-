@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CoRamTix - Contact</title>
 	<link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
@@ -11,19 +11,17 @@
 	<meta name="twitter:card" content="index.html">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="website">
-	<meta property="og:description" content="">
-	<meta name="description" content="">
+	<meta property="og:description" content="Get in touch with CoRamTix for premium game and VPS hosting support.">
+	<meta name="description" content="Contact CoRamTix support for any queries regarding Minecraft, GTA V, and VPS hosting.">
 	<meta property="og:url" content="https://www.coramtix.in/contact">
 	<meta property="og:image" content="assets/images/social-preview.jpg"> 
+    
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png"> 
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
 	<link rel="manifest" href="assets/site.webmanifest">
-	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#000000">
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
-	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="msapplication-config" content="assets/browserconfig.xml"> 
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
@@ -31,77 +29,84 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/animations.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/service.css">
+
+    <style>
+        /* Extra custom styling for the contact page */
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            border: 1px solid #e1e1e1;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+            border-color: #0d6efd;
+        }
+        .btn-send {
+            border-radius: 10px;
+            padding: 12px 35px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+    </style>
 </head>
 <body>
 	
-	<nav id="navbar_top" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+	<nav id="navbar_top" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
 		<div class="container-fluid container-custom">
-			<a class="navbar-brand" href="https://www.coramtix.in">
-				<img class="img-fluid" src="assets/images/logo.svg" alt="CORAMTIX Logo" /> <span>CORAMTIX</span>
+			<a class="navbar-brand d-flex align-items-center" href="https://www.coramtix.in">
+				<img class="img-fluid me-2" src="assets/images/logo.svg" alt="CORAMTIX Logo" style="width: 40px;" /> 
+                <span class="fw-bold">CORAMTIX</span>
 			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dinoNavbar" aria-controls="dinoNavbar" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dinoNavbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="dinoNavbar">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="https://www.coramtix.in">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="minecraft">Minecraft Hosting</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="https://www.coramtix.in">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="minecraft">Minecraft</a></li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Game Hosting
-						</a>
-						<ul class="dropdown-menu dropdown-large dropdown-menu-end">
-							<div class="row g-3">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Game Hosting</a>
+						<ul class="dropdown-menu dropdown-large dropdown-menu-end shadow border-0">
+							<div class="row g-3 p-2">
 								<div class="col-6">
 									<ul class="list-unstyled">
-										<li><a class="dropdown-item" href="ark"><img src="assets/images/game_icons/game-ark.png" alt="ARK Icon" /> ARK</a></li>
-										<li><a class="dropdown-item" href="csgo.html"><img src="assets/images/game_icons/game-csgo.png" alt="CS:GO Icon" /> CS:GO</a></li>
+										<li><a class="dropdown-item" href="ark"><img src="assets/images/game_icons/game-ark.png" width="20" class="me-2"/> ARK</a></li>
+										<li><a class="dropdown-item" href="csgo.html"><img src="assets/images/game_icons/game-csgo.png" width="20" class="me-2"/> CS:GO</a></li>
 									</ul>
 								</div>
 								<div class="col-6">
 									<ul class="list-unstyled">
-										<li><a class="dropdown-item" href="fivem"><img src="assets/images/game_icons/game-fivem.png" alt="FiveM Icon" /> FiveM</a></li>
-										<li><a class="dropdown-item" href="rust"><img src="assets/images/game_icons/game-rust.png" alt="RUST Icon" /> RUST</a></li>
+										<li><a class="dropdown-item" href="fivem"><img src="assets/images/game_icons/game-fivem.png" width="20" class="me-2"/> FiveM</a></li>
+										<li><a class="dropdown-item" href="rust"><img src="assets/images/game_icons/game-rust.png" width="20" class="me-2"/> RUST</a></li>
 									</ul>
 								</div>
 							</div>
 						</ul>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Other Hosting
-						</a>
-						<ul class="dropdown-menu dropdown-menu-end">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other</a>
+						<ul class="dropdown-menu dropdown-menu-end shadow border-0">
 							<li><a class="dropdown-item" href="vps-hosting">VPS Hosting</a></li>
 							<li><a class="dropdown-item" href="bot-hosting">Bot Hosting</a></li>
 						</ul>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Important
-						</a>
-						<ul class="dropdown-menu dropdown-menu-end">
-							<li><a class="dropdown-item" href="contact">Contact</a></li>
-							<li><a class="dropdown-item" href="terms-of-service">Terms of Service</a></li>
-							<li><a class="dropdown-item" href="privacy-policy">Privacy Policy</a></li>
-						</ul>
-					</li>
-					<li class="nav-item">
-						<div class="dropdown text-center">
-							<a class="btn dropdown-toggle" id="panel" data-bs-toggle="dropdown" aria-expanded="false">
-								Client Area
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end dropdown-menu-panel" aria-labelledby="panel">
-								<a class="dropdown-item" href="client-area.html">
-									Client Area <span class="d-block">Billing &amp; Support</span>
-								</a>
-								<a class="dropdown-item" href="game-panel.html">
-									Game Panel <span class="d-block">Game Management</span>
-								</a>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="contact">Contact</a></li>
+					<li class="nav-item ms-lg-3">
+						<div class="dropdown">
+							<a class="btn btn-primary px-4 rounded-pill" id="panel" data-bs-toggle="dropdown">Client Area</a>
+							<ul class="dropdown-menu dropdown-menu-end shadow border-0">
+								<li><a class="dropdown-item py-2" href="client-area.html"><b>Client Area</b><br><small>Billing & Support</small></a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item py-2" href="game-panel.html"><b>Game Panel</b><br><small>Management</small></a></li>
 							</ul>
 						</div>
 					</li>
@@ -110,72 +115,127 @@
 		</div>
 	</nav>
 
-<!-- ✅ Contact Section -->
-<section class="contact py-5">
-	<div class="container">
-		<div class="title text-center mb-5">
-			<h4>Contact Us</h4>
-			<p>Have questions or need support? Get in touch with us!</p>
-		</div>
-		
-		<!-- 📨 Contact Info -->
-		<div class="row mt-5 justify-content-center text-center">
-			<div class="col-md-6">
-				<h5 class="mb-3">Contact Information</h5>
-				<p><strong>Email:</strong> <a href="mailto:support@coramtix.in">support@coramtix.in</a></p>
-				<p><strong>Phone: +91</strong> <a href="tel:9064456592">9064456592</a></p>
-				<p><strong>Discord:</strong> <a href="https://discord.gg/Bc26Mgmrum" target="_blank">Join Our Discord</a></p>
-			</div>
-		</div>
-	</div>
-</section>
-	<footer class="py-5">
-		<div class="container-fluid container-custom">
-			<div class="row">
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-lg-4">
-							<h4>Services</h4>
-							<ul>
-								<li><a href="game-hosting">Game Hosting</a></li>
-								<li><a href="bot-hosting">Bot Hosting </a></li>
-								<li><a href="vps-hosting">VPS Hosting</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-4">
-							<h4>Support</h4>
-							<ul>
-								<li><a href="contact">Contact</a></li>
-								<li><a href="https://discord.gg/fUu6Kp9Zn6">Discord</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-4">
-							<h4>Company</h4>
-							<ul>
-								<li><a href="refund-policy">Refund Policy</a></li>
-								<li><a href="terms-of-service">Terms of Service</a></li>
-								<li><a href="privacy-policy">Privacy Policy</a></li>
-							</ul>
-						</div>
-					</div>
+    <section class="contact-header py-5 mt-5 bg-light">
+        <div class="container text-center py-4">
+            <h1 class="display-5 fw-bold">Contact Our Team</h1>
+            <p class="lead text-muted">Aapki hosting journey mein hum har kadam par aapke saath hain.</p>
+        </div>
+    </section>
+
+    <section class="contact-body py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-4">
+                    <div class="card contact-card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-envelope-open-text fa-3x text-primary"></i>
+                        </div>
+                        <h4>Email Us</h4>
+                        <p class="text-muted">General support ke liye mail karein.</p>
+                        <a href="mailto:support@coramtix.in" class="h5 text-decoration-none">support@coramtix.in</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card contact-card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="mb-3">
+                            <i class="fab fa-discord fa-3x" style="color: #5865F2;"></i>
+                        </div>
+                        <h4>Discord</h4>
+                        <p class="text-muted">Fastest response & community.</p>
+                        <a href="https://discord.gg/Bc26Mgmrum" target="_blank" class="btn btn-sm btn-outline-primary">Join Discord Server</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card contact-card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-phone-alt fa-3x text-success"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p class="text-muted">Mon-Sat (10 AM - 6 PM)</p>
+                        <a href="tel:9064456592" class="h5 text-decoration-none">+91 9064456592</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-10 mt-5">
+                    <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4">
+                        <h2 class="mb-4">Send us a Message</h2>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Aapka Naam" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="name@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Subject</label>
+                                    <input type="text" class="form-control" placeholder="Kisme madad chahiye?" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">How can we help?</label>
+                                    <textarea class="form-control" rows="5" placeholder="Aapki query yahan likhein..." required></textarea>
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary btn-send shadow">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+	<footer class="py-5 bg-dark text-white">
+		<div class="container container-custom">
+			<div class="row g-4">
+				<div class="col-lg-3">
+					<h3 class="d-flex align-items-center mb-4 text-white">
+						<img class="img-fluid me-2" src="assets/images/logo.svg" alt="CORAMTIX Logo" width="35" /> <span>CORAMTIX</span>
+					</h3>
+					<p class="small opacity-75">&copy; 2025 CoRamTix. All rights reserved. <br>Premium Server Hosting Solutions for gamers.</p>
+				</div>
+				<div class="col-6 col-lg-3">
+					<h5 class="mb-3">Services</h5>
+					<ul class="list-unstyled opacity-75">
+						<li><a href="game-hosting" class="text-white text-decoration-none">Game Hosting</a></li>
+						<li><a href="bot-hosting" class="text-white text-decoration-none">Bot Hosting </a></li>
+						<li><a href="vps-hosting" class="text-white text-decoration-none">VPS Hosting</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-lg-3">
+					<h5 class="mb-3">Support</h5>
+					<ul class="list-unstyled opacity-75">
+						<li><a href="contact" class="text-white text-decoration-none">Contact Us</a></li>
+						<li><a href="https://discord.gg/fUu6Kp9Zn6" class="text-white text-decoration-none">Discord Support</a></li>
+                        <li><a href="terms-of-service" class="text-white text-decoration-none">Terms of Service</a></li>
+					</ul>
 				</div>
 				<div class="col-lg-3">
-					<h3>
-						<img class="img-fluid" src="assets/images/logo.svg" alt="CORAMTIX Footer Logo" /> <span>CORAMTIX</span>
-					</h3>
-					<p class="copy">&copy; 2025 CoRamTix. All rights reserved. | Premium Server Hosting Solutions</p>
+					<h5 class="mb-3">Stay Connected</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
 				</div>
 			</div>
 		</div>
 	</footer>
-	<script src="assets/js/jquery.min.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/custom.js"></script>
     <script>
 		jQuery("#reviews").owlCarousel({autoplay:!0,rewind:!0,margin:20,mouseDrag:!0,nav:!1,dots:!1,lazyLoad:!0,responsive:{0:{items:1},576:{items:2},768:{items:2},1024:{items:2},1366:{items:2}}});
 	</script>
-	<script src="assets/js/custom.js"></script>
-	<script>
 </body>
 </html>
