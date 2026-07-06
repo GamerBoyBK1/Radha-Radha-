@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy Product – CoRamTix</title>
+
+<style>
+/* --- CSS STYLES --- */
+:root{
+  --brand:#7200ff;
+  --brand-dark:#5a00cc;
+  --bg:#f6f7fb; 
+  --card:#ffffff; 
+  --text:#111;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --radius:18px;
+  --success:#10b981;
+  --success-dark:#059669;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  min-height:100vh;
+  background:white; 
+  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+}
+
+body::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:none; 
+}
+
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-100px)}
+}
+
+/* CARD */
+.buy-card{
+  max-width:520px;
+  width:100%;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,.1); 
+  padding:40px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+  animation:slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.buy-card h1{
+  color:var(--brand); 
+  font-size:32px;
+  margin-bottom:8px;
+  font-weight:800;
+}
+
+.buy-card p{
+  color:var(--muted);
+  margin-bottom:24px;
+  line-height:1.6;
+}
+
+/* PRODUCT */
+.product-box{
+  background:var(--bg); 
+  border:2px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:24px;
+  transition:all 0.3s ease;
+}
+
+.product-box:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.product-box h2{
+  font-size:22px;
+  color:var(--text);
+  font-weight:700;
+}
+
+/* OPTIONS */
+.buy-actions{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  padding-top: 10px;
+}
+
+.buy-note{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:-8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+.buy-note::before{
+  content:'✓';
+  color:var(--success);
+  font-weight:bold;
+}
+
+/* PAY BUTTON */
+.btn-pay{
+  background:linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%); 
+  color:#fff;
+  border:none;
+  padding:16px 24px;
+  font-size:16px;
+  font-weight:700;
+  border-radius:999px;
+  cursor:pointer;
+  transition:all .3s ease;
+  box-shadow:0 4px 15px rgba(114,0,255,.3); 
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-pay:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(114,0,255,.4); 
+}
+
+.btn-pay:active{
+  transform:translateY(0);
+}
+
+/* DISCORD */
+.btn-discord{
+  background:linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
+  color:#fff;
+  text-decoration:none;
+  padding:16px 24px;
+  font-size:16px;
+  font-weight:700;
+  border-radius:999px;
+  transition:all .3s ease;
+  box-shadow:0 4px 15px rgba(88,101,242,.3);
+  display:inline-block;
+}
+
+.btn-discord:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(88,101,242,.4);
+}
+
+.btn-discord:active{
+  transform:translateY(0);
+}
+
+.buy-footer{
+  margin-top:28px;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+  font-size:14px;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* LANGUAGE SELECTOR STYLES */
+.lang-select-container {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+#language-select {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  font-size: 14px;
+  background: white;
+  color: var(--text);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+#language-select:hover{
+  border-color: var(--brand); 
+  box-shadow: 0 2px 8px rgba(114,0,255,.15); 
+}
+
+#language-select:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(114,0,255,.1);
+}
+
+.lang-text {
+  display: none;
+}
+
+.lang-text.active {
+  display: inline;
+}
+
+.feature-text{
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+/* DIVIDER */
+.divider{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.divider::before,
+.divider::after{
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border);
+}
+
+.divider::before{
+  margin-right: 12px;
+}
+
+.divider::after{
+  margin-left: 12px;
+}
+
+@media(max-width:480px){
+  .buy-card{padding:28px 20px}
+  .buy-card h1{font-size:26px}
+  .buy-footer{font-size:12px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="buy-card">
+  
+  <div class="lang-select-container">
+    <select id="language-select" onchange="switchLanguage(this.value)" aria-label="Select Language">
+      <option value="en">🇬🇧 English</option>
+      <option value="hi">🇮🇳 हिंदी</option>
+      <option value="bn">🇧🇩 বাংলা</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="fr">🇫🇷 Français</option>
+    </select>
+  </div>
+  
+  <h1>
+    <span class="lang-text active" data-lang="en">Complete Your Purchase</span>
+    <span class="lang-text" data-lang="hi">अपनी खरीद पूरी करें</span>
+    <span class="lang-text" data-lang="bn">আপনার ক্রয় সম্পূর্ণ করুন</span>
+    <span class="lang-text" data-lang="es">Completa tu Compra</span>
+    <span class="lang-text" data-lang="fr">Finalisez Votre Achat</span>
+  </h1>
+  
+  <p>
+    <span class="lang-text active" data-lang="en">Select the option that suits you best</span>
+    <span class="lang-text" data-lang="hi">वह विकल्प चुनें जो आपके लिए सबसे अच्छा हो</span>
+    <span class="lang-text" data-lang="bn">যে বিকল্পটি আপনার জন্য সবচেয়ে উপযুক্ত সেটি নির্বাচন করুন</span>
+    <span class="lang-text" data-lang="es">Selecciona la opción que más te convenga</span>
+    <span class="lang-text" data-lang="fr">Sélectionnez l'option qui vous convient le mieux</span>
+  </p>
+
+  <div class="product-box">
+    <h2>
+      <span class="lang-text active" data-lang="en">🎯 Our Service</span>
+      <span class="lang-text" data-lang="hi">🎯 हमारी सेवा</span>
+      <span class="lang-text" data-lang="bn">🎯 আমাদের পরিষেবা</span>
+      <span class="lang-text" data-lang="es">🎯 Nuestro Servicio</span>
+      <span class="lang-text" data-lang="fr">🎯 Notre Service</span>
+    </h2>
+  </div>
+
+  <p class="feature-text">
+    <span class="lang-text active" data-lang="en">Choose your preferred payment method below:</span>
+    <span class="lang-text" data-lang="hi">नीचे अपनी पसंदीदा भुगतान विधि चुनें:</span>
+    <span class="lang-text" data-lang="bn">নীচে আপনার পছন্দের পেমেন্ট পদ্ধতি নির্বাচন করুন:</span>
+    <span class="lang-text" data-lang="es">Elige tu método de pago preferido a continuación:</span>
+    <span class="lang-text" data-lang="fr">Choisissez votre méthode de paiement préférée ci-dessous:</span>
+  </p>
+
+  <div class="buy-actions">
+
+    <button class="btn-pay" id="pay-button" onclick="handlePaymentClick()">
+      <span id="pay-button-content">
+        <span class="lang-text active" data-lang="en">💳 Pay & Get Product Instantly</span>
+        <span class="lang-text" data-lang="hi">💳 भुगतान करें और उत्पाद तुरंत प्राप्त करें</span>
+        <span class="lang-text" data-lang="bn">💳 পেমেন্ট করুন এবং সাথে সাথে প্রোডাক্ট পান</span>
+        <span class="lang-text" data-lang="es">💳 Pagar y obtener el producto al instante</span>
+        <span class="lang-text" data-lang="fr">💳 Payer et Obtenir le Produit Instantanément</span>
+      </span>
+    </button>
+    
+    <div class="buy-note">
+      <span class="lang-text active" data-lang="en">Instant activation after successful payment</span>
+      <span class="lang-text" data-lang="hi">सफल भुगतान के बाद तत्काल सक्रियण</span>
+      <span class="lang-text" data-lang="bn">সফল পেমেন্টের পর তাৎক্ষণিক সক্রিয়করণ</span>
+      <span class="lang-text" data-lang="es">Activación instantánea después del pago exitoso</span>
+      <span class="lang-text" data-lang="fr">Activation instantanée après paiement réussi</span>
+    </div>
+
+    <div class="divider">
+      <span class="lang-text active" data-lang="en">OR</span>
+      <span class="lang-text" data-lang="hi">या</span>
+      <span class="lang-text" data-lang="bn">অথবা</span>
+      <span class="lang-text" data-lang="es">O</span>
+      <span class="lang-text" data-lang="fr">OU</span>
+    </div>
+
+    <a href="https://discord.gg/SFrxRVDkqv"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn-discord">
+      <span class="lang-text active" data-lang="en">💬 Create Ticket via Discord</span>
+      <span class="lang-text" data-lang="hi">💬 डिस्कॉर्ड के माध्यम से टिकट बनाएं</span>
+      <span class="lang-text" data-lang="bn">💬 ডিসকর্ড এর মাধ্যমে টিকিট তৈরি করুন</span>
+      <span class="lang-text" data-lang="es">💬 Crear Ticket a través de Discord</span>
+      <span class="lang-text" data-lang="fr">💬 Créer un Ticket via Discord</span>
+    </a>
+    
+    <div class="buy-note">
+      <span class="lang-text active" data-lang="en">Manual assistance for payment and custom requests</span>
+      <span class="lang-text" data-lang="hi">भुगतान और कस्टम अनुरोधों के लिए मैन्युअल सहायता</span>
+      <span class="lang-text" data-lang="bn">পেমেন্ট এবং কাস্টম অনুরোধের জন্য ম্যানুয়াল সহায়তা</span>
+      <span class="lang-text" data-lang="es">Asistencia manual para pago y solicitudes personalizadas</span>
+      <span class="lang-text" data-lang="fr">Assistance manuelle pour le paiement et les demandes personnalisées</span>
+    </div>
+
+  </div>
+
+  <div class="buy-footer">
+    <span>
+      <span class="lang-text active" data-lang="en">🔐 Secure payments</span>
+      <span class="lang-text" data-lang="hi">🔐 सुरक्षित भुगतान</span>
+      <span class="lang-text" data-lang="bn">🔐 নিরাপদ পেমেন্ট</span>
+      <span class="lang-text" data-lang="es">🔐 Pagos seguros</span>
+      <span class="lang-text" data-lang="fr">🔐 Paiements sécurisés</span>
+    </span>
+    <span>•</span>
+    <span>
+      <span class="lang-text active" data-lang="en">🛠️ 24/7 Support</span>
+      <span class="lang-text" data-lang="hi">🛠️ 24/7 समर्थन</span>
+      <span class="lang-text" data-lang="bn">🛠️ 24/7 সমর্থন</span>
+      <span class="lang-text" data-lang="es">🛠️ Soporte 24/7</span>
+      <span class="lang-text" data-lang="fr">🛠️ Support 24/7</span>
+    </span>
+  </div>
+
+</div>
+
+<script>
+// Translations for the MAINTENANCE state
+const MAINTENANCE_TEXTS = {
+  en: '⚠️ Billing Maintenance. Continue to Discord',
+  hi: '⚠️ बिलिंग मेंटेनेंस में है। डिस्कॉर्ड पर जाएं',
+  bn: '⚠️ বিলিং রক্ষণাবেক্ষণে আছে। ডিসকর্ডে যান',
+  es: '⚠️ Facturación en mantenimiento. Usa Discord',
+  fr: '⚠️ Facturation en maintenance. Utilisez Discord',
+};
+
+function switchLanguage(lang) {
+  // 1. Remove 'active' class from ALL language spans
+  document.querySelectorAll('.lang-text').forEach(function(span) {
+    span.classList.remove('active');
+  });
+
+  // 2. Add 'active' class to spans matching the selected language
+  document.querySelectorAll('.lang-text[data-lang="' + lang + '"]').forEach(function(span) {
+    span.classList.add('active');
+  });
+  
+  // 3. Store preference in localStorage for persistence
+  try {
+    localStorage.setItem('preferredLanguage', lang);
+  } catch(e) {
+    console.log('Unable to save language preference');
+  }
+}
+
+// Function to handle the button click with Maintenance logic
+function handlePaymentClick() {
+  const button = document.getElementById('pay-button');
+  const buttonContent = document.getElementById('pay-button-content');
+  const langSelect = document.getElementById('language-select');
+  const currentLang = langSelect.value;
+  
+  // 1. Disable the button
+  button.disabled = true;
+  button.style.cursor = 'not-allowed';
+  
+  // 2. Change appearance to indicate maintenance (Red/Orange Warning Gradient)
+  button.style.background = 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)';
+  button.style.boxShadow = '0 4px 15px rgba(239, 68, 68, 0.4)';
+
+  // 3. Change text to maintenance message according to language
+  buttonContent.innerHTML = `<span style="font-size: 15px;">${MAINTENANCE_TEXTS[currentLang] || MAINTENANCE_TEXTS['en']}</span>`;
+
+  // 4. Highlight the Discord button to draw user's attention
+  const discordBtn = document.querySelector('.btn-discord');
+  discordBtn.style.transform = 'scale(1.05)';
+  discordBtn.style.boxShadow = '0 0 20px rgba(88, 101, 242, 0.8)';
+  
+  // Reset the discord button highlight slightly after 1.5 seconds for a pulsing effect
+  setTimeout(() => {
+    discordBtn.style.transform = 'scale(1)';
+    discordBtn.style.boxShadow = '0 4px 15px rgba(88, 101, 242, 0.3)';
+  }, 1500);
+}
+
+// Set the default language when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  let savedLang;
+  try {
+    savedLang = localStorage.getItem('preferredLanguage');
+  } catch(e) {
+    console.log('Unable to load language preference');
+  }
+  
+  const langSelect = document.getElementById('language-select');
+  
+  if (savedLang) {
+    langSelect.value = savedLang;
+    switchLanguage(savedLang);
+  } else {
+    const defaultLang = langSelect.value;
+    switchLanguage(defaultLang);
+  }
+});
+</script>
+
+</body>
+</html>

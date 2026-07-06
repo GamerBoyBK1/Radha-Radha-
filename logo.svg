@@ -1,0 +1,99 @@
+<svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blue-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6b21a8"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <linearGradient id="pink-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#be185d"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <linearGradient id="cyan-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <radialGradient id="core-grad" cx="45%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </radialGradient>
+
+    <filter id="shadow-ring">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+
+    <filter id="shadow-core">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="gold-glow">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Smaller Logo -->
+  <g transform="translate(256 256) scale(0.65) translate(-256 -256)">
+
+    <!-- Mote Sun Circles -->
+    <circle cx="422.2" cy="89.8" r="10" fill="url(#gold-grad)" filter="url(#gold-glow)"/>
+    <circle cx="89.8" cy="422.2" r="10" fill="url(#gold-grad)" filter="url(#gold-glow)"/>
+
+    <g filter="url(#shadow-ring)">
+      <!-- Mote Outer Ring Paths -->
+      <path d="M 94.5 284.5 A 164 164 0 0 1 298.4 97.6"
+            fill="none" stroke="url(#blue-grad)"
+            stroke-width="54" stroke-linecap="round"/>
+
+      <path d="M 241.7 92.6 A 164 164 0 0 1 410.1 312.1"
+            fill="none" stroke="url(#purple-grad)"
+            stroke-width="54" stroke-linecap="round"/>
+
+      <path d="M 420 256 A 164 164 0 0 1 186.7 404.6"
+            fill="none" stroke="url(#pink-grad)"
+            stroke-width="54" stroke-linecap="round"/>
+
+      <path d="M 241.7 419.4 A 164 164 0 0 1 101.9 199.9"
+            fill="none" stroke="url(#cyan-grad)"
+            stroke-width="54" stroke-linecap="round"/>
+
+      <path d="M 94.5 284.5 A 164 164 0 0 1 114 174"
+            fill="none" stroke="url(#blue-grad)"
+            stroke-width="54" stroke-linecap="round"/>
+
+      <!-- Mote Sun Rays -->
+      <g stroke="url(#gold-grad)"
+         stroke-width="12"
+         stroke-linecap="round"
+         filter="url(#gold-glow)">
+        <line x1="355" y1="157" x2="389" y2="123"/>
+        <line x1="355" y1="355" x2="389" y2="389"/>
+        <line x1="157" y1="355" x2="123" y2="389"/>
+      </g>
+    </g>
+
+    <g filter="url(#shadow-core)">
+      <circle cx="256" cy="256" r="80" fill="url(#core-grad)"/>
+
+      <!-- Mote Center Element -->
+      <path d="M 280 280 A 30 30 0 1 1 280 232"
+            fill="none"
+            stroke="#1d4ed8"
+            stroke-width="14"
+            stroke-linecap="round"/>
+    </g>
+
+  </g>
+</svg>

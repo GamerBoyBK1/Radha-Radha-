@@ -1,0 +1,178 @@
+/* -------------------------------------------------- */
+/* --- Scroll Jitter Fix for Fixed Navbar --- */
+/* -------------------------------------------------- */
+#navbar_top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  will-change: transform;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light border for light theme */
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* -------------------------------------------------- */
+/* --- Currency Switcher Styles --- */
+/* -------------------------------------------------- */
+.currency-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.currency-switcher label {
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000; /* Dark text for light background */
+  transition: color 0.3s;
+}
+
+.currency-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.currency-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7200ff; /* Purple accent */
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #7200ff; /* Same purple */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* -------------------------------------------------- */
+/* --- Plan Card UI Styles --- */
+/* -------------------------------------------------- */
+.mc-card {
+  background: #ffffff; /* White background */
+  border: 2px solid #e2e8f0; /* Light border */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  will-change: transform;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+  border-color: #7200ff; /* Purple accent */
+}
+
+.mc-card .card-header {
+  background: #f8f9fa; /* Light gray */
+  padding: 1.5rem 1rem;
+}
+
+.mc-card .card-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748; /* Dark text */
+}
+
+.mc-card .card-price {
+  background: #7200ff; /* Purple accent */
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  border-top: 1px solid #e2e8f0;
+}
+
+.mc-card .card-price span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0; /* Light text on purple */
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.mc-card .card-body {
+  padding: 1.5rem;
+  background: #ffffff; /* White background */
+}
+
+.mc-card .card-body ul li {
+  font-size: 1rem;
+  color: #000; /* Medium gray text */
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0; /* Light border */
+  text-align: left;
+}
+
+.mc-card .card-body ul li:last-child {
+  border-bottom: none;
+}
+
+.mc-card .card-body ul li i {
+  margin-right: 15px;
+  color: #7200ff; /* Purple accent */
+  font-size: 1.25rem;
+  width: 25px;
+  text-align: center;
+}
+
+.mc-card .btn {
+  background: #7200ff; /* Purple accent */
+  border: none;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.mc-card .btn:hover {
+  background: #5a00cc; /* Darker purple */
+  transform: scale(1.02);
+}
+
+.mc-card .plan-icons {
+  display: none;
+}

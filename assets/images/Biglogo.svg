@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Vibrant Segment Gradients -->
+    <linearGradient id="blue-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6b21a8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <linearGradient id="pink-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#be185d" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cyan-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0891b2" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Polished Metallic Gold Gradient -->
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- Central Off-White Matte Core Gradient -->
+    <radialGradient id="core-grad" cx="45%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </radialGradient>
+
+    <!-- Balanced Soft Shadows for Sleek Look -->
+    <filter id="shadow-ring" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+    
+    <filter id="shadow-core" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Outer Orbiting Gold Dots (Proportionally sized) -->
+  <circle cx="422.2" cy="89.8" r="6" fill="url(#gold-grad)" filter="url(#gold-glow)" />
+  <circle cx="89.8" cy="422.2" r="6" fill="url(#gold-grad)" filter="url(#gold-glow)" />
+
+  <!-- Main Ring & Elements Group (Thinner and sleeker) -->
+  <g filter="url(#shadow-ring)">
+    <!-- 1. Blue Segment -->
+    <path d="M 94.5 284.5 A 164 164 0 0 1 298.4 97.6" fill="none" stroke="url(#blue-grad)" stroke-width="38" stroke-linecap="round" />
+
+    <!-- 2. Purple Segment -->
+    <path d="M 241.7 92.6 A 164 164 0 0 1 410.1 312.1" fill="none" stroke="url(#purple-grad)" stroke-width="38" stroke-linecap="round" />
+
+    <!-- 3. Pink Segment -->
+    <path d="M 420 256 A 164 164 0 0 1 186.7 404.6" fill="none" stroke="url(#pink-grad)" stroke-width="38" stroke-linecap="round" />
+
+    <!-- 4. Cyan Segment -->
+    <path d="M 241.7 419.4 A 164 164 0 0 1 101.9 199.9" fill="none" stroke="url(#cyan-grad)" stroke-width="38" stroke-linecap="round" />
+
+    <!-- 5. Blue Overlap Arc (For continuous basket-weave loop) -->
+    <path d="M 94.5 284.5 A 164 164 0 0 1 114 174" fill="none" stroke="url(#blue-grad)" stroke-width="38" stroke-linecap="round" />
+
+    <!-- Re-aligned Slanted Gold Accent Lines (Perfect 45-degree crossings for thinner ring) -->
+    <g stroke="url(#gold-grad)" stroke-width="6" stroke-linecap="round" filter="url(#gold-glow)">
+      <!-- Top-Right Accent -->
+      <line x1="355" y1="157" x2="389" y2="123" />
+      <!-- Bottom-Right Accent -->
+      <line x1="355" y1="355" x2="389" y2="389" />
+      <!-- Bottom-Left Accent -->
+      <line x1="157" y1="355" x2="123" y2="389" />
+    </g>
+  </g>
+
+  <!-- Balanced Center White Core Disc -->
+  <g filter="url(#shadow-core)">
+    <circle cx="256" cy="256" r="80" fill="url(#core-grad)" />
+    
+    <!-- Sleek Mathematically Centered Vector 'C' -->
+    <path d="M 280 280 A 30 30 0 1 1 280 232" fill="none" stroke="#1d4ed8" stroke-width="8" stroke-linecap="round" />
+  </g>
+</svg>
