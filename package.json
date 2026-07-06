@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://bibekarish.github.io/Radha-Radha-",
+  "homepage": "https://www.coramtix.in",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",

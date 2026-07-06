@@ -13,8 +13,8 @@ import Buy from './pages/Buy';
 
 export default function App() {                        
   return (
-    <Router basename="/Radha-Radha-">                                               
-      <div className="min-h-screen bg-white text-slate-900 antialiased">                                          
+    <Router>                                               
+      <div className="min-h-screen bg-white text-slate-900 antialiased selection:bg-[#7200FF]/10 selection:text-[#7200FF]">                                          
         <Navbar />
         <main>
           <Routes>                                               
